@@ -1,5 +1,16 @@
-require("pyrros_config")
+require("config.options")
+require("config.keymaps")
 
-vim.cmd([[colorscheme monokai-pro]])
+require("plugins.monokai")
+require("plugins.nvim-web-devicons")
+require("plugins.nvim-treesitter")
+require("plugins.lsp")
+require("plugins.mason")
+require("plugins.oil")
+require("plugins.nvim-tree")
+require("plugins.fzf-lua")
+require("plugins.blink")
+require("plugins.lualine")
+require("plugins.markview")
+require("plugins.cellular-automaton")
 
-vim.opt.mouse = nil

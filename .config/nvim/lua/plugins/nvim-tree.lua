@@ -1,12 +1,9 @@
--- disable netrw at the very start of your init.lua (strongly advised)
-vim.g.loaded_netrw = 0
-vim.g.loaded_netrwPlugin = 0
+vim.pack.add({
+	"https://github.com/nvim-tree/nvim-tree.lua"
+})
 
--- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
-
--- empty setup using defaults
 require("nvim-tree").setup({
     hijack_cursor = true,
     view = {
@@ -19,3 +16,5 @@ require("nvim-tree").setup({
         ignore_list = {},
       },
 })
+
+vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle NvimTree" })

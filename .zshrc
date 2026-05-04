@@ -7,11 +7,21 @@ fi
 
 source ~/.zsh_plugins/powerlevel10k/powerlevel10k.zsh-theme
 
+# Petri Nets
+export PATH="$PATH:/Applications/nd.app/Contents/MacOS/bin"
+export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/Applications/nd.app/Contents/MacOS/lib"
 
 alias ls="ls --color"
 alias lsx="ls --color -lath" 
 alias lsc="ls -1 | wc -l" 
 alias bonsai="cbonsai -li -t 0.02 -L 60"
+alias tree="tree -C"
+
+fcd() {
+  local dir
+  dir=$(fd --type d . 2>/dev/null | fzf) || return
+  cd "$dir"
+}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -41,3 +51,5 @@ unset __conda_setup
 conda deactivate
 
 
+
+. "$HOME/.local/bin/env"
